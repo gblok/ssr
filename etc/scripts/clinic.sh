@@ -6,4 +6,4 @@ set -a [ -f ./.env ] && . ./.env && set +
 
 echo "${PAD}" CLINIC DOCTOR "${PAD}"
 
-clinic doctor --on-port 'autocannon localhost:$PORT' -- node "${DIST}/server"
+clinic doctor --autocannon [ -c 10 ./ ] -- node "${DIST}/server/index.js"
