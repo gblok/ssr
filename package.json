@@ -1,0 +1,26 @@
+{
+  "name": "ssr",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "fastify": "*",
+    "inferno": "*",
+    "inferno-server": "*",
+    "superagent": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*",
+    "@babel/cli": "*",
+    "@babel/core": "*",
+    "@babel/node": "*",
+    "@babel/preset-env": "*",
+    "@types/node": "^14.6.4",
+    "babel-plugin-inferno": "*"
+  },
+  "scripts": {
+    "dev": "sh etc/scripts/dev.sh",
+    "build": "sh etc/scripts/build.sh",
+    "clinic": "sh etc/scripts/clinic.sh"
+
+  }
+}

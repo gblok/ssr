@@ -1,0 +1,26 @@
+{
+  "compact": true,
+  "minified": true,
+  "sourceType": "module",
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "cjs",
+        "debug": false,
+        "loose": true,
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "inferno",
+      {
+        "imports": true
+      }
+    ]
+  ]
+}
