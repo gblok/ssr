@@ -9,6 +9,7 @@
     "superagent": "*"
   },
   "devDependencies": {
+    "standard": "*",
     "nodemon": "*",
     "@babel/cli": "*",
     "@babel/core": "*",
@@ -20,7 +21,8 @@
   "scripts": {
     "dev": "sh etc/scripts/dev.sh",
     "build": "sh etc/scripts/build.sh",
-    "clinic": "sh etc/scripts/clinic.sh"
-
+    "clinic": "sh etc/scripts/clinic.sh",
+    "fix": "standard --fix",
+    "test": "standard"
   }
 }
