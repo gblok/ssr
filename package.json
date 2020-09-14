@@ -2,6 +2,9 @@
   "name": "ssr",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "fastify": "*",
     "inferno": "*",
@@ -10,6 +13,7 @@
   },
   "devDependencies": {
     "standard": "*",
+    "prettier": "*",
     "nodemon": "*",
     "@babel/cli": "*",
     "@babel/core": "*",
@@ -20,9 +24,27 @@
   },
   "scripts": {
     "dev": "sh etc/scripts/dev.sh",
-    "build": "sh etc/scripts/build.sh",
     "clinic": "sh etc/scripts/clinic.sh",
     "fix": "standard --fix",
-    "test": "standard"
+    "test": "standard",
+    "pre": "sh etc/scripts/pre.sh",
+    "precommit": "lint-staged",
+    "lint-staged": {
+      "*": [
+        "standard --fix"
+      ]
+    }
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "tabWidth": 2,
+    "useTabs": false,
+    "printWidth": 120,
+    "trailingComma": "none",
+    "singleQuote": true,
+    "semi": false,
+    "jsxSingleQuote": true,
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
   }
 }
