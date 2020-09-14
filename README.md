@@ -3,4 +3,4 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/gblok/ssr/badge.svg?targetFile=package.json)](https://snyk.io/test/github/gblok/ssr?targetFile=package.json)
 
 
-git config core.hooksPath etc/.githooks
+git config core.hooksPath etc/githooks
