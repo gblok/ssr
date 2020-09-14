@@ -18,13 +18,14 @@ const initInfo = err =>
     : console.info(`${String.fromCharCode(9763)} ${APP_NAME} v.${APP_VERSION} : ${SERVER_PORT}`)
 
 const props = {
-  style: {
-    color: 'red'
-  },
+  style: { color: 'red' },
   name: 'World!'
 }
 
-const handler = (req, reply) => reply.type('text/html').send(renderToString(App(props)))
+const handler = (req, reply) =>
+  reply
+    .type('text/html')
+    .send(renderToString(App(props)))
 
 app
   .get('/', handler)
