@@ -6,9 +6,9 @@ function xargs-r() {
   # prevents xargs from running if there are no input files.
   if IFS= read -r -d $'\n' path; then
     {
-      echo "$path"
+      echo "${path}"
       cat
-    } | xargs $@
+    } | xargs "${@}"
   fi
 }
 
