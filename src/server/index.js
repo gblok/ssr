@@ -19,9 +19,7 @@ const initInfo = err =>
 
 const props = {
   style: {
-    color: 'red',
-    'background-color': 'black',
-    'font-size': '2rem'
+    color: 'red'
   },
   name: 'World!'
 }
