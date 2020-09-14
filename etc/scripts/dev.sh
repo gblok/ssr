@@ -2,15 +2,14 @@
 
 set -a [ -f ./.env ] && . ./.env && set +
 
-echo "${PAD}" DEV SERVER "${PAD}"
+echo "$PAD DEV SERVER $PAD"
 
-mkdir -p "${DIST}"
+mkdir -p "$DIST"
 
-CONFIG=${DIST}/dev.json
-SERVER=src/server/index.js
+CONFIG=$DIST/dev.json
+SERVER=src/server/index
 
-
-cat <<EOM >"${CONFIG}"
+cat <<EOM >"$CONFIG"
 {
 "restartable": "rs",
 "verbose": false,
@@ -29,13 +28,13 @@ cat <<EOM >"${CONFIG}"
 ],
 "env": {
     "NODE_ENV": "development",
-    "NODE_OPTIONS": "--max-old-space-size=${NODE_MAX_OLD_SPACE} --trace-warnings",
+    "NODE_OPTIONS": "--max-old-space-size=$NODE_MAX_OLD_SPACE --trace-warnings",
     "DEBUG": true
 },
 "execMap": {"js": "babel-node"}
 }
 EOM
 
-#cat "${CONFIG}"
+#cat "$CONFIG"
 
-nodemon --config "${CONFIG}" "${SERVER}"
+nodemon --config "$CONFIG" "$SERVER"

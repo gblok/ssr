@@ -21,6 +21,7 @@
     "babel-plugin-inferno": "*"
   },
   "scripts": {
+    "inspect": "sh etc/scripts/inspect.sh",
     "dev": "sh etc/scripts/dev.sh",
     "clinic": "sh etc/scripts/clinic.sh",
     "fix": "standard --fix",
