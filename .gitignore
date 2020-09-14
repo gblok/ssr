@@ -3,6 +3,4 @@
 node_modules
 public
 dist
-zz
-tmp
-*.log
+build

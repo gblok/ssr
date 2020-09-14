@@ -1,6 +1,6 @@
 {
   "name": "ssr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "engines": {
     "node": ">=14"
@@ -8,12 +8,10 @@
   "dependencies": {
     "fastify": "*",
     "inferno": "*",
-    "inferno-server": "*",
-    "superagent": "*"
+    "inferno-server": "*"
   },
   "devDependencies": {
     "standard": "*",
-    "prettier": "*",
     "nodemon": "*",
     "@babel/cli": "*",
     "@babel/core": "*",
@@ -40,6 +38,7 @@
     "arrowParens": "avoid",
     "quoteProps": "as-needed",
     "jsxSingleQuote": true,
-    "jsxBracketSameLine": true
+    "jsxBracketSameLine": true,
+    "proseWrap": "preserve"
   }
 }
