@@ -1,9 +1,5 @@
-const Item = ({ color, name, idx }) => (
-  <div>
-    Hello<b>{idx}</b>
-    <b>{color}</b>
-    <span>{name}</span>
-  </div>
-)
-
-export const App = props => Array.from({ length: 100 }, (i, idx) => Item({ ...props, idx }))
+const Item = ({ name }) => <li>Hello {name}</li>
+export const App = ({ style, name }) =>
+  <ol $HasNonKeyedChildren style={style}>
+    {Array.from({ length: 100 }, () => Item({ name }))}
+  </ol>

@@ -17,7 +17,14 @@ const initInfo = err =>
     ? console.error(err)
     : console.info(`${String.fromCharCode(9763)} ${APP_NAME} v.${APP_VERSION} : ${SERVER_PORT}`)
 
-const props = { color: 'red', name: 'Hello world' }
+const props = {
+  style: {
+    color: 'red',
+    'background-color': 'black',
+    'font-size': '2rem'
+  },
+  name: 'World!'
+}
 
 const handler = (req, reply) => reply.type('text/html').send(renderToString(App(props)))
 
