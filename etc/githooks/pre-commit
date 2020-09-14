@@ -8,7 +8,7 @@ function xargs-r() {
     {
       echo "$path"
       cat
-    } | xargs "${@}"
+    } | xargs $@
   fi
 }
 
