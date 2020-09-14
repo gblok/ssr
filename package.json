@@ -27,7 +27,14 @@
     "clinic": "sh etc/scripts/clinic.sh",
     "fix": "standard --fix",
     "test": "standard",
-    "pre": "sh etc/scripts/pre.sh"
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "standard --fix",
+      "git add"
+    ]
   },
   "prettier": {
     "endOfLine": "lf",
