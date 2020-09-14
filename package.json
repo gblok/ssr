@@ -27,13 +27,7 @@
     "clinic": "sh etc/scripts/clinic.sh",
     "fix": "standard --fix",
     "test": "standard",
-    "pre": "sh etc/scripts/pre.sh",
-    "precommit": "lint-staged",
-    "lint-staged": {
-      "*": [
-        "standard --fix"
-      ]
-    }
+    "pre": "sh etc/scripts/pre.sh"
   },
   "prettier": {
     "endOfLine": "lf",
@@ -43,8 +37,10 @@
     "trailingComma": "none",
     "singleQuote": true,
     "semi": false,
-    "jsxSingleQuote": true,
     "bracketSpacing": true,
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": true,
+    "jsxBracketSameLine": true
   }
 }
