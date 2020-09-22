@@ -1,0 +1,33 @@
+version: '3'
+services:
+
+  nginx:
+    image: ${NGINX_IMG}
+
+    container_name: nginx
+    restart: always
+
+    ports:
+      - 80:80
+      - 443:443
+
+    networks:
+      - infra
+
+    depends_on: [ app ]
+
+    links:
+      - app
+
+    volumes:
+      - ./.etc/cert:/etc/cert:ro
+      - ./.etc/docker/nginx:/etc/nginx:ro
+      - static:/static:ro
+
+    command: [ nginx-debug, '-g', 'daemon off;' ]
+
+networks:
+  infra:
+
+volumes:
+  static:
