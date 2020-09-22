@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo 'pre-commit.'
-
 # Ensure all JavaScript files staged for commit pass standard code style
 function xargs-r() {
   # Portable version of "xargs -r". The -r flag is a GNU extension that
