@@ -1,32 +1,14 @@
 import server from 'fastify'
-import { renderToString } from 'inferno-server'
-import { inspect } from 'util'
-import { App } from '../client'
 
-inspect.defaultOptions = { depth: null }
+import { APP_OPTS, LOKI_OPTS, SERVER_BACKLOG, SERVER_HOST, SERVER_OPTS, SERVER_PORT } from './configs'
 
-const { SERVER_PORT, SERVER_HOST, SERVER_BACKLOG, APP_NAME, APP_VERSION } = process.env
+import { serverInit } from './modules'
+import { Loki } from './plugins'
+import { App } from './routes'
 
-const app = server({
-  logger: false,
-  ignoreTrailingSlash: true
-})
-
-const initInfo = err =>
-  err
-    ? console.error(err)
-    : console.info(`${String.fromCharCode(9763)} ${APP_NAME} v.${APP_VERSION} : ${SERVER_PORT}`)
-
-const props = {
-  style: { color: 'red' },
-  name: 'World!'
-}
-
-const handler = (req, reply) =>
-  reply
-    .type('text/html')
-    .send(renderToString(App(props)))
+const app = server(SERVER_OPTS)
 
 app
-  .get('/', handler)
-  .listen(Number(SERVER_PORT), String(SERVER_HOST), Number(SERVER_BACKLOG), initInfo)
+  .register(Loki, LOKI_OPTS)
+  .register(App, APP_OPTS)
+  .listen(SERVER_PORT, SERVER_HOST, SERVER_BACKLOG, serverInit)
