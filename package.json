@@ -1,12 +1,12 @@
 {
   "name": "ssr",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "engines": {
     "node": ">=14"
   },
   "dependencies": {
-    "eventemitter3": "^4.0.7",
+    "eventemitter3": "*",
     "fastify": "*",
     "inferno": "*",
     "inferno-server": "*",
@@ -19,19 +19,18 @@
     "@babel/preset-env": "*",
     "@types/node": "*",
     "babel-plugin-inferno": "*",
-    "nodemon": "*",
+    "nodemon": "*"
+  },
+  "optionalDependency": {
     "standard": "*",
+    "prittier": "*",
     "pg": "*",
     "cassandra-driver": "*"
   },
-  "optionalDependency": {},
   "scripts": {
-    "inspect": "sh etc/scripts/inspect.sh",
-    "docker": "sh etc/scripts/docker.sh",
     "dev": "sh etc/scripts/dev.sh",
-    "ssr": "autocannon http://127.0.0.1:9393/ssr",
     "clinic": "sh etc/scripts/clinic.sh",
-    "fix": "standard --fix",
-    "test": "standard"
+    "test": "standard",
+    "perf": "sh etc/scripts/perf.sh ssr"
   }
 }

@@ -45,7 +45,7 @@ export const App = ({ style, name }) => (
     </head>
     <body>
       <section $HasNonKeyedChildren style={style}>
-        {Array.from({ length: 1000 }, (i, idx) => (
+        {Array.from({ length: 250 }, (i, idx) => (
           <Item idx={idx} />
         ))}
       </section>

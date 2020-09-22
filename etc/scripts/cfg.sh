@@ -15,4 +15,4 @@ printf t $1 d;
 printf length($2) ? tolower($2) ~ /true|false|null|^[0-9]*$/ ? tolower($2) : q $2 q : "null";
 print z;}' .env >"${CFG}"
 
-cat "${CFG}"
+#cat "${CFG}"
