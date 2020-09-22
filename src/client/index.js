@@ -2,9 +2,9 @@ const rndInt = (min, max) => Math.floor(min + Math.random() * (max + 1 - min))
 
 const users = [
   {
-    name: 'Mr. Arch',
+    name: 'Mr. Twister',
     role: 'admin',
-    email: 'arttolstykh@gmail.com',
+    email: 'twister@example.com',
     isActive: true
   },
   {
