@@ -1,7 +1,6 @@
 import { loki } from '../../modules'
 
-export const Main = (req, reply) =>
-  reply.send(loki.mr('test'))
+export const Main = (req, reply) => reply.send(loki.mr('test'))
 
 // .type('text/html')
 // .code(200)

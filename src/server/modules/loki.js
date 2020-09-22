@@ -32,16 +32,14 @@ const close = (f, done) => done(LOG('LOKI CLOSE'))
 
 const count = cid => {
   const coll = db.getCollection(cid)
-  
+
   return coll.count()
 }
 const reduceFunction = v =>
   v.reduce((acc, curr) => {
     const { type, uuid } = curr
-    acc[type]
-      ? acc[type].push(uuid)
-      : acc[type] = [uuid]
-    
+    acc[type] ? acc[type].push(uuid) : (acc[type] = [uuid])
+
     return acc
   }, {})
 
@@ -57,10 +55,7 @@ const tx = [
   }
 ]
 
-const mr = cid =>
-  db
-    .getCollection(cid)
-    .chain(tx)
+const mr = cid => db.getCollection(cid).chain(tx)
 
 // .data({removeMeta:true})
 // .getDynamicView('xxx')

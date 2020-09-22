@@ -11,13 +11,11 @@ const props = {
 let dom = null
 
 const html = () => {
-  if (!dom) { dom = renderToString(<App {...props} />) }
-  
+  if (!dom) {
+    dom = renderToString(<App {...props} />)
+  }
+
   return dom
 }
 
-export const SSR = (req, reply) =>
-  reply
-    .type('text/html')
-    .code(200)
-    .send(html())
+export const SSR = (req, reply) => reply.type('text/html').code(200).send(html())

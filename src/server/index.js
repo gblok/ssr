@@ -8,7 +8,4 @@ import { App } from './routes'
 
 const app = server(SERVER_OPTS)
 
-app
-  .register(Loki, LOKI_OPTS)
-  .register(App, APP_OPTS)
-  .listen(SERVER_PORT, SERVER_HOST, SERVER_BACKLOG, serverInit)
+app.register(Loki, LOKI_OPTS).register(App, APP_OPTS).listen(SERVER_PORT, SERVER_HOST, SERVER_BACKLOG, serverInit)

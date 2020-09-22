@@ -5,11 +5,10 @@ inspect.defaultOptions = { depth: null }
 
 export * from '../../shared/configs'
 
-export const
-  SERVER_OPTS = {
-    logger: false,
-    ignoreTrailingSlash: true
-  }
+export const SERVER_OPTS = {
+  logger: false,
+  ignoreTrailingSlash: true
+}
 
 export const API_V1_OPTS = { prefix: '/api', scope: 'v1' }
 export const APP_OPTS = { prefix: '/', scope: 'app' }
