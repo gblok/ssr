@@ -8,14 +8,6 @@ const props = {
   name: 'SSR'
 }
 
-let dom = null
-
-const html = () => {
-  if (!dom) {
-    dom = renderToString(<App {...props} />)
-  }
-
-  return dom
-}
+const html = () => renderToString(<App {...props} />)
 
 export const SSR = (req, reply) => reply.type('text/html').code(200).send(html())
