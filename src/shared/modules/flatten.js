@@ -5,12 +5,12 @@ const isValidObject = v => {
   return !isArray && isObject && !!Object.keys(v).length
 }
 
-const w = (obj, sep, path = []) =>
-  Object.assign(
-    {},
-    ...Object.keys(obj).map(key =>
-      isValidObject(obj[key]) ? w(obj[key], sep, path.concat([key])) : { [path.concat([key]).join(sep)]: obj[key] }
+const Flatten = (obj, sep = ':', path = []) =>
+  Object.keys(obj)
+    .map(key =>
+      isValidObject(obj[key])
+        ? Flatten(obj[key], sep, path.concat([key]))
+        : { [path.concat([key]).join(sep)]: obj[key] }
     )
-  )
 
-export const Flatten = (obj, sep = ':') => Object.assign({}, w(obj, sep))
+export { Flatten }

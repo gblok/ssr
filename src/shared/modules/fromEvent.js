@@ -3,8 +3,7 @@ const currentTime = scheduler => scheduler.currentTime()
 const tryEvent = (t, data, sink) => {
   try {
     sink.event(t, data)
-  }
-  catch (err) {
+  } catch (err) {
     sink.error(t, err)
   }
 }
