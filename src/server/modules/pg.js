@@ -1,3 +1,4 @@
+/*
 import { Pool } from 'pg'
 import { LOG } from './'
 
@@ -22,3 +23,4 @@ export const pg = {
   close,
   query
 }
+*/

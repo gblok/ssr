@@ -1,3 +1,4 @@
+/*
 import { Client } from 'cassandra-driver'
 import { _ERR, LOG } from './'
 
@@ -17,7 +18,6 @@ const query = async (query, params = [], opts = {}) => {
 }
 
 // const stream = async (query, params = [], opts = {}) => client.stream(query, params, opts)
-//
 // const eachRow = (query, params, cb) => client.eachRow(query, params, { prepare: true }, cb)
 
 export const scylla = {
@@ -25,3 +25,4 @@ export const scylla = {
   close,
   query
 }
+*/
