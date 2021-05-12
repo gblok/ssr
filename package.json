@@ -10,7 +10,7 @@
     "fastify": "*",
     "inferno": "*",
     "inferno-server": "*",
-    "lokijs": "*"
+    "lokijs": "1.5.12"
   },
   "devDependencies": {
     "@babel/cli": "*",
