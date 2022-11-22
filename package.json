@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "eventemitter3": "*",
-    "fastify": "*",
+    "fastify": "3.29.4",
     "inferno": "*",
     "inferno-server": "*",
     "lokijs": "*"
